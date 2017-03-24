@@ -1,0 +1,18 @@
+; Algoritmo para multiplicar 2 cantidades
+; En b y c se almacenan los numeros a multiplicar
+; b se va sumando a a en cada iteracion del bucle
+; el resultado es almacenado en a
+
+	JP START
+	NOP
+	NOP
+START:
+	LD	a 0
+	LD	b 3
+	LD	c 3
+	BIT	5 c
+LOOP: ;etiqueta de salto de bucle
+	ADD a b
+	DEC c
+	JRNZ LOOP
+
