@@ -136,8 +136,8 @@ Line *Line::lineFactory(std::string line, std::map<std::string, int> *symbolTabl
 			if (isIntegerNumber(o1)){
 				op1Type = INMEDIATE_16BITS;
 			}else{
-				if (o1.length > 1){
-					op1Type = COMPOSED_REGISTER;
+				if (o1.length() > 1){
+					op1Type = REGISTER_COMPOSED;
 				}else{
 					op1Type = REGISTER;
 				}
@@ -150,7 +150,7 @@ Line *Line::lineFactory(std::string line, std::map<std::string, int> *symbolTabl
 				}else if (tmp < 65536){
 					*nByte += 2;
 				}
-				op1Type = INMEDIATE;
+				op1Type = INMEDIATE_8BITS;
 			}else{
 				op1Type = REGISTER;
 			}
@@ -161,7 +161,7 @@ Line *Line::lineFactory(std::string line, std::map<std::string, int> *symbolTabl
 				}else if (tmp < 65536){
 					*nByte += 2;
 				}
-				op2Type = INMEDIATE;
+				op2Type = INMEDIATE_8BITS;
 			}else{
 				op2Type = REGISTER;
 			}
